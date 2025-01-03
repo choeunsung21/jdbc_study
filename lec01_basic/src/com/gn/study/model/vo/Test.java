@@ -48,5 +48,4 @@ public class Test {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("YYYY년MM월dd일 HH시mm분ss초");
 		return "번호:" + testNo + ", 이름:" + testName + ", 등록일:" + testDate.format(dtf);
 	}
-
 }

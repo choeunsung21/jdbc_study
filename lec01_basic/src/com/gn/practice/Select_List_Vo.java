@@ -25,7 +25,10 @@ public class Select_List_Vo {
 
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/jdbc_basic", "scott", "tiger");
+			String ur1 = "jdbc:mariadb://127.0.0.1:3306/jdbc_basic";
+			String id = "scott";
+			String pwd = "tiger";
+			conn = DriverManager.getConnection(ur1, id, pwd);
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery("SELECT t_no, t_name, t_date FROM test");
 
