@@ -1,5 +1,6 @@
 package com.gn.study.view;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,6 +10,7 @@ import com.gn.study.model.vo.Member;
 public class MemberMenu {
 	private Scanner sc = new Scanner(System.in);
 	private MemberController mc = new MemberController();
+	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
 	public void mainMenu() {
 		while (true) {
@@ -61,9 +63,10 @@ public class MemberMenu {
 			System.out.println("조회된 결과가 없습니다");
 		} else {
 			for (Member m : list) {
-				System.out.println("번호: " + m.getMemberNo() + ", ID: " + m.getMemberId() + ", 이름: " + m.getMemberName()
-						+ ", 이메일: " + m.getMemberEmail() + ", 전화번호: " + m.getMemberPhone() + ", 성별: "
-						+ m.getMemberGender() + ", 등록일: " + m.getRegDate() + ", 수정일: " + m.getModDate());
+				System.out.println(
+						"번호: " + m.getMemberNo() + ", ID: " + m.getMemberId() + ", 이름: " + m.getMemberName() + ", 이메일: "
+								+ m.getMemberEmail() + ", 전화번호: " + m.getMemberPhone() + ", 성별: " + m.getMemberGender()
+								+ ", 등록일: " + m.getRegDate().format(dtf) + ", 수정일: " + m.getModDate().format(dtf));
 			}
 		}
 	}
