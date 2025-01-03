@@ -57,6 +57,15 @@ public class MemberMenu {
 		List<Member> list = mc.seletMemberAll();
 		// (1) 만약에 list가 비어있다면 -> 조회된 결과가 없습니다.
 		// (2) Member 목록 출력
+		if (list.isEmpty()) {
+			System.out.println("조회된 결과가 없습니다");
+		} else {
+			for (Member m : list) {
+				System.out.println("번호: " + m.getMemberNo() + ", ID: " + m.getMemberId() + ", 이름: " + m.getMemberName()
+						+ ", 이메일: " + m.getMemberEmail() + ", 전화번호: " + m.getMemberPhone() + ", 성별: "
+						+ m.getMemberGender() + ", 등록일: " + m.getRegDate() + ", 수정일: " + m.getModDate());
+			}
+		}
 	}
 
 	// 회원 정보 추가
