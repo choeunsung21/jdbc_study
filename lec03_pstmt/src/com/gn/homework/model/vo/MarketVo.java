@@ -9,10 +9,12 @@ public class MarketVo {
 	private String user_name; // 사용자 닉네임
 	private LocalDateTime reg_date; // 회원가입일
 	private LocalDateTime mod_date; // 정보수정일
+
 	private int product_no; // 제품 번호
 	private String product_name; // 제품명
 	private int product_price; // 제품 가격
 	private int product_stock; // 재고
+
 	private int buy_no; // 거래 번호
 	private int sales; // 판매수
 

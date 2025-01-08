@@ -99,6 +99,9 @@ public class MarketDao {
 			pstmt.setString(2, userPw);
 
 			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				vo = new MarketVo();
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
